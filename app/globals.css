@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --color-charcoal: #0d0d0d;
+  --color-charcoal-50: #1a1a1a;
+  --color-charcoal-100: #151515;
+  --color-surface: #151515;
+  --color-gold: #c8a96e;
+  --color-gold-light: #dfc090;
+  --color-gold-dark: #a08050;
+  --color-gold-muted: #8a6e48;
+  --color-burgundy: #7d1d3f;
+  --color-burgundy-light: #9b2750;
+  --color-burgundy-dark: #5a1530;
+  --color-cream: #f5f0e8;
+  --color-cream-muted: #b8b0a0;
+  --color-cream-dark: #8a8278;
+
+  --animate-fade-up: fadeUp 0.8s ease forwards;
+  --animate-fade-in: fadeIn 1s ease forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #f5f0e8;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8a96e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dfc090;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(200, 169, 110, 0.3);
+  color: #f5f0e8;
+}
+
+/* Gold divider utility */
+.gold-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8a96e, transparent);
+  margin: 1.5rem auto;
+}
+
+/* Dot leader for menu */
+.dot-leader {
+  flex: 1;
+  border-bottom: 1px dotted rgba(200, 169, 110, 0.3);
+  margin: 0 0.75rem;
+  transform: translateY(-6px);
+}
+
+/* Section padding */
+.section-pad {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding: 8rem 2rem;
+  }
+}
+
+/* Glass morphism nav */
+.glass-nav {
+  background: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+}
+
+/* Image hover scale utility */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
