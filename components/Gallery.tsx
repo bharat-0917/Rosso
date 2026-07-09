@@ -16,8 +16,8 @@ const galleryImages = [
     wide: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3df7?w=800&q=80",
-    alt: "Grilled sea bass with seasonal vegetables",
+    src: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&q=80",
+    alt: "Grilled salmon/fish with seasonal vegetables",
     wide: false,
   },
   {
